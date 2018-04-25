@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\Model\Question;
+
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Tymon\JWTAuth\Contracts\JWTSubject;
