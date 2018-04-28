@@ -8,7 +8,10 @@
                 :data=question
               ></question>
           </v-flex>
-          Sidebar
+          
+          <v-flex xs4>
+              <app-sidebar></app-sidebar>
+          </v-flex>
       </v-layout>
   </v-container>
 </template>
@@ -16,6 +19,7 @@
 <script>
 
 import question from './question'
+import AppSidebar from './AppSidebar'
 
 export default {
 
@@ -25,7 +29,7 @@ export default {
         }
     },
 
-    components: {question},
+    components: {question, AppSidebar},
 
     created(){
         axios('api/question')

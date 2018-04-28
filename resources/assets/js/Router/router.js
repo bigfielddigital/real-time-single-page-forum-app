@@ -9,12 +9,14 @@ import Signup from '../components/login/Signup'
 import Forum from '../components/Forum/Forum'
 import Read from '../components/Forum/read'
 import Create from '../components/Forum/create'
+import CreateCategory from '../components/category/CreateCategory'
 
 const routes = [
     { path: '/login', component: Login },
     { path: '/logout', component: Logout },
     { path: '/signup', component: Signup },
     { path: '/forum', component: Forum, name: 'forum' },
+    { path: '/category', component: CreateCategory },
     { path: '/question/:slug', component: Read, name: 'read' },
     { path: '/ask-question', component: Create }
 ]
