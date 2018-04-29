@@ -19,8 +19,10 @@ class Question extends Model
     }
 
     // protected $fillable = ['title','slug','body','category_id','user_id'];
-
     // protected $guarded = [];
+
+    protected $with = ['replies'];
+
     protected $fillable = ['title', 'slug', 'body', 'user_id', 'category_id'];
 
     public function user(){
@@ -28,7 +30,7 @@ class Question extends Model
     }
 
     public function replies(){
-        return $this->hasMany(Reply::class);
+        return $this->hasMany(Reply::class)->latest();
     }
 
     public function category(){
