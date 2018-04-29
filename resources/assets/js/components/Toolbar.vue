@@ -3,6 +3,7 @@
     <!-- <v-toolbar-side-icon></v-toolbar-side-icon> -->
     <v-toolbar-title>CEOForum.ng</v-toolbar-title>
     <v-spacer></v-spacer>
+    <app-notification v-if="loggedIn"></app-notification>
     <div class="hidden-sm-and-down">
        
        <router-link
@@ -18,10 +19,12 @@
 </template>
 
 <script>
+import AppNotification from './AppNotification'
 export default {
 
     data(){
       return {
+        loggedIn: User.loggedIn(),
         items: [
           {title : 'Forum', to: '/forum', show: true}, 
           {title : 'Ask Question', to: '/ask-question', show: User.loggedIn()},
@@ -31,6 +34,8 @@ export default {
         ]
       }
     },
+
+    components:{AppNotification},
 
     created(){
       EventBus.$on('logout', () =>{
